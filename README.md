@@ -1,2 +1,2 @@
-# TheLatinNet
-A mix of two of my favourite hobbies: Latin and HTML!
+# The Latin Net
+The online library with everything Latin.
