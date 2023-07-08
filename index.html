@@ -10,8 +10,81 @@
 
         <link rel="stylesheet" href="assets/style.css">
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .topnav a:hover {
+                background-color: #FBC4B2;
+                color: white;
+            }
+
+            .topnav a.active {
+                background-color: #B78271;
+                color: white;
+            }
+        </style>
+    
     </head>
+
     <body>
-        <img src="assets/logo.png" alt="logo">
+        <div class="topnav" id="topnav">
+            <a class="active" href="index.html">Home</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="nouns.html">Noun Conjugators</a>
+            <a href="verbs.html">Verbs Conjugators</a>
+            <a href="javascript:void(0);" class="icon" onclick="showMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="main">
+
+            <center>
+                <img src="assets/logo.png" alt="logo" width="100%" id="logo">
+                <h1>The Online Latin Library</h1>
+            </center>
+
+            <br><br>
+
+            <em>Latin</em> is one of my small side hobbies, but so is HTML and web design, so...
+            <br><br>
+
+            <b>I decided to mix the two together!</b>
+
+            <br><br>
+
+            <em>The Latin Net</em> is an online space where you can find different lessons and a verb and noun conjugator!
+
+            <br><br>
+
+            I hope you have fun browsing the site and learning some new Latin! <em>habete amet, amici!</em>
+
+            <h2>Try These...</h2>
+            <div class="card">Coming Soon...</div>
+            <div class="card">Coming Soon...</div>
+            <div class="card">Coming Soon...</div>
+
+            <br><br>
+
+            <center><h1>© codingboy_CW</h1></center>
+
+        </div>
+        
+
+        <script src="script.js"></script>
     </body>
 </html>
