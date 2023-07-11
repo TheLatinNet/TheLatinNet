@@ -1,11 +1,12 @@
 /*
 © Hamd Waseem 2023 under the Apache License 2.0
-https://github.com/hamdivazim/TheLatinNet
+https://github.com/TheLatinNet/TheLatinNet
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * { font-family: 'Montserrat', sans-serif; }
+/* "system-ui", -apple-system, "segoe ui", Roboto, Oxygen, Ubuntu, Cantarell, "fira sans", "droid sans", "helvetica neue", Helvetica, Arial, sans-serif*/
 
 .topnav {
     position: -webkit-sticky; /* Safari */
@@ -63,4 +64,52 @@ body  { margin: 0px; }
     #logo {
         width: 873px;
     }
+}
+
+.conj-field {
+    margin: 15px 0px;
+    padding: 15px;
+    border-radius: 12px 0px 0px 12px;
+    border: 2px solid rgb(183, 182, 182);
+    width: 300px;
+}
+
+.conj-field:focus {
+    border: 2px solid lightgray;
+}
+
+.submit-button {
+    transition: 0.3s;
+}
+
+.submit-button:hover {
+    border: 2px solid rgb(53, 100, 56);
+    background-color: rgb(94, 172, 98);
+}
+
+.left {
+    float: left;
+    width: 50%;
+}
+
+.right {
+    float: left;
+    width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+    .left, .right {   
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.key { 
+    color: rgb(41, 150, 66);
+    margin-right: 5px;
+}
+
+.meaning { 
+    color: rgb(41, 97, 150);
+    margin-left: 5px;
 }
