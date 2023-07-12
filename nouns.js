@@ -8,8 +8,8 @@ function loadNouns() {
 }
 
 function conjugateNoun() {
-    const ref = document.getElementById("noun")
-    const noun = ref.value
+    const ref = document.getElementById("noun");
+    const noun = ref.value;
 
     fetch("https://raw.githubusercontent.com/TheLatinNet/nouns/main/words.json")
         .then(response => {
@@ -23,7 +23,7 @@ function conjugateNoun() {
             if (data[noun] == undefined) {
 
             } else {
-                let conj = getConjugation(data[noun]);
+                let conj = getConjugation(data[noun], noun);
 
                 const html = document.getElementById("noun-conjuagted");
 
@@ -73,7 +73,7 @@ function conjugateNoun() {
         });
 }
 
-function getConjugation(data) {
+function getConjugation(data, noun) {
     if (data[0] == "1") {
         let stem = data["1"].slice(0, -2);
 
@@ -90,6 +90,87 @@ function getConjugation(data) {
             stem + "arum",
             stem + "is",
             stem + "is"
+        ]
+
+        return result
+    }
+    if (data[0] == "2") {
+        let stem = data["1"].slice(0, -1);
+
+        let result = [
+            noun,
+            stem + "e",
+            stem + "um",
+            stem + "i",
+            stem + "o",
+            stem + "o",
+            stem + "i",
+            stem + "i",
+            stem + "os",
+            stem + "orum",
+            stem + "is",
+            stem + "is"
+        ]
+
+        return result
+    }
+    if (data[0] == "2n") {
+        let stem = data["1"].slice(0, -1);
+
+        let result = [
+            stem + "um",
+            stem + "um",
+            stem + "um",
+            stem + "i",
+            stem + "o",
+            stem + "o",
+            stem + "a",
+            stem + "a",
+            stem + "a",
+            stem + "orum",
+            stem + "is",
+            stem + "is"
+        ]
+
+        return result
+    }
+    if (data[0] == "3") {
+        let stem = data["1"].slice(0, -2);
+
+        let result = [
+            noun,
+            noun,
+            stem + "em",
+            stem + "is",
+            stem + "i",
+            stem + "e",
+            stem + "es",
+            stem + "es",
+            stem + "es",
+            stem + "um",
+            stem + "ibus",
+            stem + "ibus"
+        ]
+
+        return result
+    }
+
+    if (data[0] == "3n") {
+        let stem = data["1"].slice(0, -2);
+
+        let result = [
+            noun,
+            noun,
+            noun,
+            stem + "is",
+            stem + "i",
+            stem + "e",
+            stem + "a",
+            stem + "a",
+            stem + "a",
+            stem + "um",
+            stem + "ibus",
+            stem + "ibus"
         ]
 
         return result
