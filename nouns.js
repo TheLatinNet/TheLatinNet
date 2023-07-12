@@ -169,8 +169,7 @@ function getConjugation(data, noun) {
             stem + "a",
             stem + "orum",
             stem + "is",
-            stem + "is",
-            stem + "e"
+            stem + "is"
         ]
 
         return result
@@ -211,7 +210,50 @@ function getConjugation(data, noun) {
             stem + "a",
             stem + "um",
             stem + "ibus",
+            stem + "ibus",
+            stem + "e"
+        ]
+
+        return result
+    }
+
+    if (data[0] == "4") {
+        let stem = data["1"].slice(0, -2);
+
+        let result = [
+            noun,
+            noun,
+            stem + "um",
+            stem + "us",
+            stem + "ui",
+            stem + "u",
+            stem + "us",
+            stem + "us",
+            stem + "us",
+            stem + "uum",
+            stem + "ibus",
             stem + "ibus"
+        ]
+
+        return result
+    }
+
+    if (data[0] == "5") {
+        let stem = data["1"].slice(0, -2);
+
+        let result = [
+            noun,
+            noun,
+            stem + "em",
+            stem + "ei",
+            stem + "ei",
+            stem + "e",
+            stem + "es",
+            stem + "es",
+            stem + "es",
+            stem + "erum",
+            stem + "ebus",
+            stem + "ebus"
         ]
 
         return result
