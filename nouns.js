@@ -7,6 +7,10 @@ function loadNouns() {
     
 }
 
+function isCapital(character) {
+    return character === character.toUpperCase() && character !== character.toLowerCase();
+}
+
 function conjugateNoun() {
     const ref = document.getElementById("noun");
     const noun = ref.value;
@@ -27,43 +31,75 @@ function conjugateNoun() {
 
                 const html = document.getElementById("noun-conjuagted");
 
-                html.innerHTML = `
+                if (isCapital(noun.charAt(0))) {
+
+                    html.innerHTML = `
                 
-                <center><h1>${conj[0]}, ${conj[3]}, ${data[noun][2]}</h1></center>
+                    <center><h1>${conj[0]}, ${conj[3]}, ${data[noun][2]}</h1></center>
 
 
-                <div class="left" style="margin: 5px;width: 48%;">
-                    <center><h2>Singular</h2></center>
-                    <hr>
+                    <div class="left" style="width: 100%;">
+                        <center><h2>Singular</h2></center>
+                        <hr>
 
-                    <div style="margin: 10px;padding:5px;">
-                        <p><span class="key">Nominative</span> ${conj[0]} -  <span class="meaning">the ${data[noun][2]}</span></p>
-                        <p><span class="key">Vocative</span> ${conj[1]} -  <span class="meaning">the ${data[noun][2]}</span></p>
-                        <p><span class="key">Accusative</span> ${conj[2]} -  <span class="meaning">the ${data[noun][2]}</span></p>
-                        <p><span class="key">Genitive</span> ${conj[3]} -  <span class="meaning">of the ${data[noun][2]}</span></p>
-                        <p><span class="key">Dative</span> ${conj[4]} -  <span class="meaning">to/for the ${data[noun][2]}</span></p>
-                        <p><span class="key">Ablative</span> ${conj[5]} -  <span class="meaning">with/by/from the ${data[noun][2]}</span></p>                        
+                        <div style="margin: 10px;padding:5px;">
+                            <p><span class="key">Nominative</span> ${conj[0]} -  <span class="meaning">${data[noun][2]}</span></p>
+                            <p><span class="key">Vocative</span> ${conj[1]} -  <span class="meaning">${data[noun][2]}</span></p>
+                            <p><span class="key">Accusative</span> ${conj[2]} -  <span class="meaning">${data[noun][2]}</span></p>
+                            <p><span class="key">Genitive</span> ${conj[3]} -  <span class="meaning">of ${data[noun][2]}</span></p>
+                            <p><span class="key">Dative</span> ${conj[4]} -  <span class="meaning">to/for ${data[noun][2]}</span></p>
+                            <p><span class="key">Ablative</span> ${conj[5]} -  <span class="meaning">with/by/from ${data[noun][2]}</span></p>
+                            <p><span class="key">Locative</span> ${conj[12]} -  <span class="meaning">in ${data[noun][2]}</span></p>                          
+                        </div>
+
                     </div>
 
-                </div>
 
-                <div class="right" style="margin: 5px;width:48%;">
-                    <center><h2>Plural</h2></center>
-                    <hr>
-                    
-                    <div style="margin: 10px;padding:5px;">
-                    <p><span class="key">Nominative</span> ${conj[6]} -  <span class="meaning">the ${data[noun][3]}</span></p>
-                    <p><span class="key">Vocative</span> ${conj[7]} -  <span class="meaning">the ${data[noun][3]}</span></p>
-                    <p><span class="key">Accusative</span> ${conj[8]} -  <span class="meaning">the ${data[noun][3]}</span></p>
-                    <p><span class="key">Genitive</span> ${conj[9]} -  <span class="meaning">of the ${data[noun][3]}</span></p>
-                    <p><span class="key">Dative</span> ${conj[10]} -  <span class="meaning">to/for the ${data[noun][3]}</span></p>
-                    <p><span class="key">Ablative</span> ${conj[11]} -  <span class="meaning">with/by/from the ${data[noun][3]}</span></p>                        
+                    `
+
+                } else {
+
+                    html.innerHTML = `
+                
+                    <center><h1>${conj[0]}, ${conj[3]}, ${data[noun][2]}</h1></center>
+
+
+                    <div class="left" style="margin: 5px;width: 48%;">
+                        <center><h2>Singular</h2></center>
+                        <hr>
+
+                        <div style="margin: 10px;padding:5px;">
+                            <p><span class="key">Nominative</span> ${conj[0]} -  <span class="meaning">the ${data[noun][2]}</span></p>
+                            <p><span class="key">Vocative</span> ${conj[1]} -  <span class="meaning">the ${data[noun][2]}</span></p>
+                            <p><span class="key">Accusative</span> ${conj[2]} -  <span class="meaning">the ${data[noun][2]}</span></p>
+                            <p><span class="key">Genitive</span> ${conj[3]} -  <span class="meaning">of the ${data[noun][2]}</span></p>
+                            <p><span class="key">Dative</span> ${conj[4]} -  <span class="meaning">to/for the ${data[noun][2]}</span></p>
+                            <p><span class="key">Ablative</span> ${conj[5]} -  <span class="meaning">with/by/from the ${data[noun][2]}</span></p>                        
+                        </div>
+
                     </div>
 
-                </div>
+                    <div class="right" style="margin: 5px;width:48%;">
+                        <center><h2>Plural</h2></center>
+                        <hr>
+                        
+                        <div style="margin: 10px;padding:5px;">
+                        <p><span class="key">Nominative</span> ${conj[6]} -  <span class="meaning">the ${data[noun][3]}</span></p>
+                        <p><span class="key">Vocative</span> ${conj[7]} -  <span class="meaning">the ${data[noun][3]}</span></p>
+                        <p><span class="key">Accusative</span> ${conj[8]} -  <span class="meaning">the ${data[noun][3]}</span></p>
+                        <p><span class="key">Genitive</span> ${conj[9]} -  <span class="meaning">of the ${data[noun][3]}</span></p>
+                        <p><span class="key">Dative</span> ${conj[10]} -  <span class="meaning">to/for the ${data[noun][3]}</span></p>
+                        <p><span class="key">Ablative</span> ${conj[11]} -  <span class="meaning">with/by/from the ${data[noun][3]}</span></p>                        
+                        </div>
+
+                    </div>
 
 
-                `
+                    `
+
+                }
+
+                
             }
             
 
@@ -89,7 +125,8 @@ function getConjugation(data, noun) {
             stem + "as",
             stem + "arum",
             stem + "is",
-            stem + "is"
+            stem + "is",
+            stem + "ae"
         ]
 
         return result
@@ -97,9 +134,11 @@ function getConjugation(data, noun) {
     if (data[0] == "2") {
         let stem = data["1"].slice(0, -1);
 
+        let voc = noun.slice(-2) === "us" ? stem + "e" : noun;
+
         let result = [
             noun,
-            stem + "e",
+            voc,
             stem + "um",
             stem + "i",
             stem + "o",
@@ -109,7 +148,8 @@ function getConjugation(data, noun) {
             stem + "os",
             stem + "orum",
             stem + "is",
-            stem + "is"
+            stem + "is",
+            stem + "i"
         ]
 
         return result
@@ -129,7 +169,8 @@ function getConjugation(data, noun) {
             stem + "a",
             stem + "orum",
             stem + "is",
-            stem + "is"
+            stem + "is",
+            stem + "e"
         ]
 
         return result
