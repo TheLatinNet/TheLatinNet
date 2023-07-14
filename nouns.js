@@ -62,7 +62,7 @@ fetch("https://raw.githubusercontent.com/TheLatinNet/examples/main/nouns.json")
                 
                 <center>
                     <h1>${noun} isn't defined!</h1>
-                    If you think you've found a noun that we haven't got in our servers yet, please <a href="${link}">file an issue</a> so we can add it as fast as possible!
+                    If you think you've found a noun that we haven't got in our servers yet, please <a href="https://github.com/TheLatinNet/nouns/issues/new">file an issue</a> so we can add it as fast as possible!
                 </center>
 
                 `

@@ -54,41 +54,18 @@ fetch("https://raw.githubusercontent.com/TheLatinNet/examples/main/nouns.json")
 
             if (data[verb] == undefined) {
 
+                html.innerHTML = `
+                
+                <center>
+                    <h1>${noun} isn't defined!</h1>
+                    If you think you've found a noun that we haven't got in our servers yet, please <a href="https://github.com/TheLatinNet/nouns/issues/new">file an issue</a> so we can add it as fast as possible!
+                </center>
+
+                `
 
             } else {
                 let conj = getConjugation(data[verb], verb);
 
-                if (isCapital(verb.charAt(0))) {
-
-                    html.innerHTML = `
-                
-                    <center><h1>${conj[0]}, ${conj[3]}, ${data[noun][2]}</h1></center>
-
-
-                    <div class="left" style="width: 100%;">
-                        <center><h2>Singular</h2></center>
-                        <hr>
-
-                        <div style="margin: 10px;padding:5px;">
-                            <p><span class="key">Nominative</span> ${conj[0]} -  <span class="meaning">${data[noun][2]}</span></p>
-                            <p><span class="key">Vocative</span> ${conj[1]} -  <span class="meaning">${data[noun][2]}</span></p>
-                            <p><span class="key">Accusative</span> ${conj[2]} -  <span class="meaning">${data[noun][2]}</span></p>
-                            <p><span class="key">Genitive</span> ${conj[3]} -  <span class="meaning">of ${data[noun][2]}</span></p>
-                            <p><span class="key">Dative</span> ${conj[4]} -  <span class="meaning">to/for ${data[noun][2]}</span></p>
-                            <p><span class="key">Ablative</span> ${conj[5]} -  <span class="meaning">with/by/from ${data[noun][2]}</span></p>
-                            <p><span class="key">Locative</span> ${conj[12]} -  <span class="meaning">in ${data[noun][2]}</span></p>                          
-                        </div>
-
-                    </div>
-
-
-                    `
-
-                } else {
-
-                    
-
-                }
                 html.innerHTML = `
                 
                     <center><h1>${conj[6]}</h1></center>
