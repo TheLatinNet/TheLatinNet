@@ -11,10 +11,39 @@ function isCapital(character) {
     return character === character.toUpperCase() && character !== character.toLowerCase();
 }
 
+function randomizeArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
 function conjugateNoun() {
     const ref = document.getElementById("noun");
     const noun = ref.value;
 
+    let examples = [];
+`
+
+fetch("https://raw.githubusercontent.com/TheLatinNet/examples/main/nouns.json")
+.then(response => {
+    if (response.ok) {
+        return response.json();
+    } else {
+        throw new Error("Error: " + response.status);
+    }
+})
+.then(data => {
+    
+    examples = data;
+
+})
+.catch(error => {
+    console.error("Error:", error);
+});
+
+`
     fetch("https://raw.githubusercontent.com/TheLatinNet/nouns/main/words.json")
         .then(response => {
             if (response.ok) {
@@ -24,12 +53,22 @@ function conjugateNoun() {
             }
         })
         .then(data => {
+
+            const html = document.getElementById("noun-conjuagted");
+
             if (data[noun] == undefined) {
+
+                html.innerHTML = `
+                
+                <center>
+                    <h1>${noun} isn't defined!</h1>
+                    If you think you've found a noun that we haven't got in our servers yet, please <a href="${link}">file an issue</a> so we can add it as fast as possible!
+                </center>
+
+                `
 
             } else {
                 let conj = getConjugation(data[noun], noun);
-
-                const html = document.getElementById("noun-conjuagted");
 
                 if (isCapital(noun.charAt(0))) {
 
@@ -64,7 +103,7 @@ function conjugateNoun() {
                     <center><h1>${conj[0]}, ${conj[3]}, ${data[noun][2]}</h1></center>
 
 
-                    <div class="left" style="margin: 5px;width: 48%;">
+                    <div class="left">
                         <center><h2>Singular</h2></center>
                         <hr>
 
@@ -79,7 +118,7 @@ function conjugateNoun() {
 
                     </div>
 
-                    <div class="right" style="margin: 5px;width:48%;">
+                    <div class="right">
                         <center><h2>Plural</h2></center>
                         <hr>
                         
@@ -94,10 +133,20 @@ function conjugateNoun() {
 
                     </div>
 
+                    
+
 
                     `
 
                 }
+
+                html.innerHTML = html.innerHTML + `
+                <div style="margin: 10px;">
+                    <p>${data[noun][6] !== "-" ? `<span class="key">Derivative</span> ${data[noun][6]}` : ""}</p>
+                    <p>Declension ${data[noun][0].slice(0, 1)} - ${data[noun][5] == "f" ? "feminine" : data[noun][5] == "m" ? "masculine" : "neuter"}</p>
+                    
+                </div>
+                `
 
                 
             }
