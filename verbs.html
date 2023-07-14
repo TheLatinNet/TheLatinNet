@@ -1,0 +1,100 @@
+<!-- 
+    © Hamd Waseem 2023 under the Apache License 2.0
+    https://github.com/TheLatinNet/TheLatinNet
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Verbs - The Latin Net</title>
+
+        <link rel="stylesheet" href="assets/style.css">
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .topnav a:hover {
+                background-color: #FBC4B2;
+                color: white;
+            }
+
+            .topnav a.active {
+                background-color: #B78271;
+                color: white;
+            }
+
+            .submit-button {
+                padding: 15px;
+                border-radius: 0px 12px 12px 0px;
+                border: 2px solid rgb(101, 189, 105);
+                background-color: rgb(126, 230, 131);
+                margin-left: -6px;
+            }
+        </style>
+    
+    </head>
+
+    <body>
+        <div class="topnav" id="topnav">
+            <a class="active" href="verbs.html">Verb Conjugators</a>
+            <a href="index.html">Home</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="nouns.html">Noun Conjugators</a>
+            <a href="javascript:void(0);" class="icon" onclick="showMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+
+        <script src="verbs.js"></script>
+
+
+
+        <div class="main">
+
+            <h2>Latin Verb Conjugator</h2>
+            
+            Enter a verb, in its person 1st person form, into the field below, and we'll conjugate it in all forms.
+        
+            <br>
+            <br>
+
+            
+
+            <input type="field" id="verb" placeholder="Verb" class="conj-field" name="verb">
+            <input type="button" id="verb-submit" class="submit-button" value="→" onclick="conjugateVerb();">
+  
+
+            
+
+            <div id="verb-conjuagted">
+
+            </div>
+
+
+            <div style="margin-top: 400px"><center><h1 id="copyright">© codingboy_CW</h1></center></div>
+
+        </div>
+        
+
+        <script src="script.js"></script>
+        <script src="verbs.js"></script>
+        
+    </body>
+</html>

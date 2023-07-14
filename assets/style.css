@@ -115,3 +115,15 @@ body  { margin: 0px; }
     color: rgb(41, 97, 150);
     margin-left: 5px;
 }
+
+.se1, .se2, .se3, .se4, .se5 {
+    width: 19%;
+    float: left;
+    margin: 0px 5px;
+}
+
+@media screen and (max-width: 800px) {
+    .se1, .se2, .se3, .se4, .se5 {   
+        width: 100%;
+    }
+}
