@@ -57,8 +57,8 @@ fetch("https://raw.githubusercontent.com/TheLatinNet/examples/main/nouns.json")
                 html.innerHTML = `
                 
                 <center>
-                    <h1>${noun} isn't defined!</h1>
-                    If you think you've found a noun that we haven't got in our servers yet, please <a href="https://github.com/TheLatinNet/nouns/issues/new">file an issue</a> so we can add it as fast as possible!
+                    <h1>${verb} isn't defined!</h1>
+                    If you think you've found a verb that we haven't got in our servers yet, please <a href="https://github.com/TheLatinNet/verbs/issues/new">file an issue</a> so we can add it as fast as possible!
                 </center>
 
                 `
